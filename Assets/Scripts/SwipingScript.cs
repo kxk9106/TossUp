@@ -85,6 +85,7 @@ public class SwipingScript : MonoBehaviour
         diff.Scale(new Vector2(0.5f, 0.5f));
 
         velocity += new Vector3(diff.x, diff.y, 0);
+		isClickedOn = false;
     }
 
     // Update is called once per frame
