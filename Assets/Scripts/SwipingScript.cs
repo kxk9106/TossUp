@@ -11,7 +11,7 @@ public class SwipingScript : MonoBehaviour
     Vector3 velocity;
     Queue<Vector2> fingerTrack = new Queue<Vector2>(); //position queue
 
-    bool isClickedOn = false;
+    public bool isClickedOn = false;
 
 
     // Use this for initialization
