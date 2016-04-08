@@ -90,7 +90,7 @@ public class SwipingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.x < -10 || this.transform.position.x > 10)
+        /*if (this.transform.position.x < -10 || this.transform.position.x > 10)
         { // Just for resetting cube
             this.transform.position = Vector3.zero;
             velocity = Vector3.zero;
@@ -101,9 +101,9 @@ public class SwipingScript : MonoBehaviour
             this.transform.position = Vector3.zero;
             velocity = Vector3.zero;
             acceleration = new Vector3(0, -GRAVITY, 0);
-        }
+        }*/
 
-        if (this.transform.position.y < CAMERA_FLOOR)
+        if (this.transform.position.y < -1/*CAMERA_FLOOR*/)
         {
             velocity = Vector3.zero;
             acceleration = Vector3.zero;
