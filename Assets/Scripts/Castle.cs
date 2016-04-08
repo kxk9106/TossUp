@@ -20,17 +20,27 @@ public class Castle : MonoBehaviour {
 
 		//takeDamage();
 		//}
+		//takeDamage ();
 	}
 
 	public void takeDamage(){
+
+		/*
+
 		//while (segment < .3839993f) {	
 		segment -= Time.deltaTime;
-		if (segment > 0) {
-			tower.transform.position -= new Vector3 (0, .1f, 0) * Time.deltaTime;
+		if (segment > -1.7) {
+			tower.transform.position -= new Vector3 (0, .5f, 0) * Time.deltaTime;
 		}
 			//segment += .001f * Time.deltaTime;
 		//}
 		//segment = 0f;
+
+		*/
+		if (tower.transform.position.y >= -0.5f) {
+			tower.transform.position -= new Vector3 (0, .5f, 0); 
+		}
+
 
 	}
 }
