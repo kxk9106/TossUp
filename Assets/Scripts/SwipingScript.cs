@@ -10,6 +10,7 @@ public class SwipingScript : MonoBehaviour
     Vector3 acceleration; // Not sure if we need this variable
     Vector3 velocity;
     Queue<Vector2> fingerTrack = new Queue<Vector2>(); //position queue
+    bool CharacterDead = false;
 
     public bool isClickedOn = false;
 
@@ -104,8 +105,18 @@ public class SwipingScript : MonoBehaviour
             acceleration = new Vector3(0, -GRAVITY, 0);
         }*/
 
-        if (this.transform.position.y < -1/*CAMERA_FLOOR*/)
+        
+
+        if (this.transform.position.y < -3/*CAMERA_FLOOR*/)
         {
+            //fatal fall speed
+            if (this.velocity.magnitude > 0.2f)
+            {
+                CharacterDead = true;
+                this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+            }
+
             velocity = Vector3.zero;
             acceleration = Vector3.zero;
         }
@@ -128,6 +139,15 @@ public class SwipingScript : MonoBehaviour
         fingerTrack.Enqueue(this.transform.position);
         fingerTrack.Enqueue(this.transform.position);
 
+    }
+
+    /// <summary>
+    /// declares the life or death status of the attatched chracter.
+    /// </summary>
+    /// <returns>charachter death/life status</returns>
+    public bool isDead()
+    {
+        return CharacterDead;
     }
 }
 

@@ -8,7 +8,6 @@ public class BomberMove : MonoBehaviour {
 
 	SwipingScript swipeScript;
 
-	Sprite blood;
 
 	Vector3 temp;
 	bool dead = false;
@@ -19,7 +18,6 @@ public class BomberMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		swipeScript = FindObjectOfType (typeof(SwipingScript)) as SwipingScript;
-		blood = Resources.Load ("blood", typeof(Sprite)) as Sprite;
 	}
 	
 	// Update is called once per frame
@@ -38,12 +36,12 @@ public class BomberMove : MonoBehaviour {
 			}
 		}
 
-		if (transform.position.y <= -1 && dead == false) {
+		if (transform.position.y <= -3 && dead == false) {
 			transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load ("blood", typeof(Sprite)) as Sprite;
 			//temp = new Vector3(0,0,0);
 			//transform.position = temp;
 			dead = true;
 		}
-		Debug.Log ("Transform" + transform.position.x);
+		//Debug.Log ("Transform" + transform.position.x);
 	}
 }
