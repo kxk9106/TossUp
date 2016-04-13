@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
         if (this.transform.position.x <= -4 && !swipeScript.isClickedOn && this.transform.position.x >= -8 && this.transform.position.y <= 4)
         {
 			Destroy(this.gameObject);
-			castScript.takeDamage();
+			//castScript.takeDamage();
 		}
         //was the character flung clear over the castle.
         else if (this.transform.position.x <= -8 && this.transform.position.y <= 4)
