@@ -16,7 +16,10 @@ public class PauseButton : MonoBehaviour {
 
 	public void pauseButton()
 	{
-		Time.timeScale = 0.0f;
-		Debug.Log ("Paused");
+		if (Time.timeScale == 0.0f) {
+			Time.timeScale = 1.0f;
+		} else {
+			Time.timeScale = 0.0f;
+		}
 	}
 }
