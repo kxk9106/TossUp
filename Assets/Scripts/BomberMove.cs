@@ -36,7 +36,7 @@ public class BomberMove : MonoBehaviour {
 			}
 		}
 
-		if (transform.position.y <= -3 && dead == false) {
+		if (transform.position.y <= -2 && dead == false) {
 			transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load ("blood", typeof(Sprite)) as Sprite;
 			//temp = new Vector3(0,0,0);
 			//transform.position = temp;

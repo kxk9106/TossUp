@@ -107,13 +107,17 @@ public class SwipingScript : MonoBehaviour
 
         
 
-        if (this.transform.position.y < -3/*CAMERA_FLOOR*/)
+        if (this.transform.position.y < -2/*CAMERA_FLOOR*/)
         {
             //fatal fall speed
             if (this.velocity.magnitude > 0.2f)
             {
                 CharacterDead = true;
-                this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+
+                if (this.gameObject.GetComponent<Animator>() != null)
+                {
+                    this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+                }
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }
 
