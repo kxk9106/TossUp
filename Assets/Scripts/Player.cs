@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 		//has this charachter been flagged for death? if not, move
 		if (!this.GetComponent<SwipingScript>().isDead())
 		{
-			this.transform.position -= new Vector3(2, 0, 0) * Time.fixedDeltaTime;
+            this.transform.position -= new Vector3(2, 0, 0) * Time.deltaTime; /*Time.fixedDeltaTime*/
 		}
 
 		//is the character coliding with the castle?

@@ -45,7 +45,7 @@ public class SwipingScript : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (isClickedOn)
+        if (isClickedOn && Time.timeScale != 0.0f)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
@@ -59,7 +59,7 @@ public class SwipingScript : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (this.transform.position.y > CAMERA_FLOOR)
+        if ((this.transform.position.y > CAMERA_FLOOR) && (Time.timeScale != 0.0f))
         { // If above the bottom of camera, apply gavity
             acceleration += new Vector3(0, -GRAVITY, 0);
         }
