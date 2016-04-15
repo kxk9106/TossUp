@@ -21,11 +21,19 @@ public class Castle : MonoBehaviour {
 		//float step = speed * Time.deltaTime;
 		//tower.transform.position = Vector3.MoveTowards(tower.transform.position, target.position, step);
 		if (counter > 0) {
-			tower.transform.position -= new Vector3 (0, .1f, 0) * Time.deltaTime;
-			counter -= 1 * Time.deltaTime;
-			Debug.Log ("hi");
+			if(tower.transform.position.y > -1.6){
+				tower.transform.position -= new Vector3 (0, .1f, 0) * Time.deltaTime;
+				counter -= 1 * Time.deltaTime;
+			}
+			if(tower.transform.position.y <= -1.6){
+				Application.LoadLevel("EndScreen");
+				Debug.Log ("woifjeoiewjfwej");
+			}
+			Debug.Log ("Tower: " + tower.transform.position.y);
+
 		} else {
 			counter = 0;
+			//
 		}
 	}
 

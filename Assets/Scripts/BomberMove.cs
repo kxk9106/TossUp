@@ -9,16 +9,13 @@ public class BomberMove : MonoBehaviour {
     Quaternion rot = Quaternion.Euler(0, 0, 0);
 
 	SwipingScript swipeScript;
-
-
+	
 	Vector3 temp;
 	bool dead = false;
 
-
-
-
 	// Use this for initialization
 	void Start () {
+		transform.position = new Vector3(9.0f, transform.position.y, transform.position.z);
 		swipeScript = FindObjectOfType (typeof(SwipingScript)) as SwipingScript;
 	}
 	
