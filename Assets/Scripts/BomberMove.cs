@@ -7,16 +7,13 @@ public class BomberMove : MonoBehaviour {
 	public bool movingLeft = true;
 
 	SwipingScript swipeScript;
-
-
+	
 	Vector3 temp;
 	bool dead = false;
 
-
-
-
 	// Use this for initialization
 	void Start () {
+		transform.position = new Vector3(9.0f, transform.position.y, transform.position.z);
 		swipeScript = FindObjectOfType (typeof(SwipingScript)) as SwipingScript;
 	}
 	

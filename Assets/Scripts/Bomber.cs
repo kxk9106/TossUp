@@ -60,7 +60,7 @@ public class Bomber : MonoBehaviour {
 	
 	void SpawnEnemy(){
 		spawnAgain = 0;
-		GameObject bomber = (GameObject)Instantiate (enemyPrefab, Vector3.up * enemyStartHeight, Quaternion.identity);
+		GameObject bomber = (GameObject)Instantiate (enemyPrefab, new Vector3(9.0f, enemyStartHeight, 0.0f), Quaternion.identity);
 		bombers.Add (bomber);
 			
 	}
