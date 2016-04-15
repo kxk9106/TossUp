@@ -11,12 +11,13 @@ public class SwipingScript : MonoBehaviour
     Vector3 velocity;
     Queue<Vector2> fingerTrack = new Queue<Vector2>(); //position queue
     bool CharacterDead = false;
+    bool isBomb = false;
 
     public bool isClickedOn = false;
 
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         queSetter();
     }
@@ -118,7 +119,16 @@ public class SwipingScript : MonoBehaviour
                 {
                     this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
                 }
-                this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+                if (!isBomb)
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+                }
+                else
+                {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("EXPLOSION", typeof(Sprite)) as Sprite; //makeexplosion
+                    Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
+                    castScript.takeDamage();
+                }
             }
 
             velocity = Vector3.zero;
@@ -152,6 +162,25 @@ public class SwipingScript : MonoBehaviour
     public bool isDead()
     {
         return CharacterDead;
+    }
+
+    /// <summary>
+    /// Set the velocity to input.
+    /// </summary>
+    /// <param name="setFling">fling value</param>
+    public void setVelocity(Vector3 setFling)
+    {
+        acceleration += new Vector3(0, -GRAVITY, 0);
+        velocity.Set(setFling.x, setFling.y, 0.0f);    
+    }
+
+    /// <summary>
+    /// tells the object to behave as a bomb
+    /// </summary>
+    /// <param name="_isBomb"></param>
+    public void IDbomb(bool _isBomb)
+    {
+        isBomb = _isBomb;
     }
 }
 

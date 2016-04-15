@@ -5,6 +5,8 @@ public class BomberMove : MonoBehaviour {
 
 	public float speed = 1;
 	public bool movingLeft = true;
+    public GameObject bombPrefab;
+    Quaternion rot = Quaternion.Euler(0, 0, 0);
 
 	SwipingScript swipeScript;
 
@@ -26,6 +28,10 @@ public class BomberMove : MonoBehaviour {
 			transform.position += Vector3.left * speed * Time.deltaTime;
 			if (transform.position.x < -2) {
 				movingLeft = false;
+                GameObject bomb = (GameObject)Instantiate(bombPrefab, this.transform.position + new Vector3(0.0f, 0.0f, -0.4f), rot);
+                Vector3 temp = new Vector3(Random.Range(-0.01f, -0.11f), -0.06f, 0.0f);
+                bomb.GetComponent<SwipingScript>().setVelocity(temp);
+                bomb.GetComponent<SwipingScript>().IDbomb(true);
 			}
 			
 		} 
