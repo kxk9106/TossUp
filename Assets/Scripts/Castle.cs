@@ -25,8 +25,9 @@ public class Castle : MonoBehaviour {
 				tower.transform.position -= new Vector3 (0, .1f, 0) * Time.deltaTime;
 				counter -= 1 * Time.deltaTime;
 			}
-			if(tower.transform.position.y < -1.6){
+			if(tower.transform.position.y <= -1.6){
 				Application.LoadLevel("EndScreen");
+				Debug.Log ("woifjeoiewjfwej");
 			}
 			Debug.Log ("Tower: " + tower.transform.position.y);
 
