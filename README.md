@@ -22,6 +22,10 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 [End]
 
 ## Danny Lee
+* Led overall game design with the group, and planned intuitive UI
+* character throwing script (co written with Tom)
+* Cleaned Tom's Death System
+* Cleaned Enemy Spawning
 
 ## Todd Williams
 
