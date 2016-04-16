@@ -106,7 +106,16 @@ public class SwipingScript : MonoBehaviour
             acceleration = new Vector3(0, -GRAVITY, 0);
         }*/
 
-        
+		if (CharacterDead == true)
+		{
+			if(this.GetComponent<SpriteRenderer>().color.a > 0){
+				Color color = this.GetComponent<SpriteRenderer>().color;
+				color.a -= 0.01f;
+				this.GetComponent<SpriteRenderer>().color = color;
+			} else {
+				Destroy(this.gameObject);
+			}
+		}
 
         if (this.transform.position.y < -2/*CAMERA_FLOOR*/)
         {
