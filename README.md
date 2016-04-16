@@ -9,7 +9,7 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * Parts of Health System/Player damage to castle
 * Bomber Movement
 
-[start]: https://github.com/kxk9106/TossUp/raw/master/ScreenPics/Lose.png "Lose Screen"
+![start]: (ScreenPics/Lose.png?raw =true "Lose Screen")
 
 ## Danny Lee
 
