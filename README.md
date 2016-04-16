@@ -3,6 +3,9 @@
 Toss Up is a tower defense game where the player must flick enemies away from attacking the castle.
 
 ## Thomas Bouffard
+* Bomb throwing and damage (+ assets for such)
+* character throwing script (co written with Danny)
+* Death system for ground units
 
 ## Kristen Kanekuni
 * UI Designer/Level Navigation (switching screens, time pause) -> Background Designed by Todd Williams
