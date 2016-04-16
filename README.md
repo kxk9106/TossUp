@@ -29,11 +29,11 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * Cleaned Enemy Spawning
 
 ## Todd Williams
-*Production of the main world, enemy, castle, and other assets displayed on screen
-*Animation and sprite sheet for the walking enemy. Also animation of the castle falling lower when taking damage
-*Script for player taking damage and triggering the castle to fall down
-*Part of the enemy spawning script
-*Basic enemy movement coding
+* Production of the main world, enemy, castle, and other assets displayed on screen
+* Animation and sprite sheet for the walking enemy. Also animation of the castle falling lower when taking damage
+* Script for player taking damage and triggering the castle to fall down
+* Part of the enemy spawning script
+* Basic enemy movement coding
 
 
 [Start]: ScreenPics/Start.png "Start Screen"
