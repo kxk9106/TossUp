@@ -1,7 +1,5 @@
 # TossUp
 
-[![Game Cover][video]
-
 Toss Up is a tower defense game where the player must flick enemies away from attacking the castle.
 
 ## Thomas Bouffard
