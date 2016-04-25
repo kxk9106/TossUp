@@ -12,14 +12,18 @@ public class SwipingScript : MonoBehaviour
     Queue<Vector2> fingerTrack = new Queue<Vector2>(); //position queue
     bool CharacterDead = false;
     bool isBomb = false;
+	private Animator anim;
+
 
     public bool isClickedOn = false;
-
+	public bool grounded = true;
 
     // Use this for initialization
     public void Start()
     {
         queSetter();
+		anim = GetComponent<Animator> ();
+
     }
 
     // Keep in mind these OnMouse events trigger before Update()
@@ -36,7 +40,10 @@ public class SwipingScript : MonoBehaviour
             if (hitCollider)
             {
                 isClickedOn = true;
+				grounded = false;
 
+				anim.SetBool ("Grabbed", (isClickedOn));
+				anim.SetBool ("Grounded", (grounded));
                 // Stop momentum if player grabs midair
                 acceleration = Vector3.zero;
                 velocity = Vector3.zero;
@@ -60,10 +67,16 @@ public class SwipingScript : MonoBehaviour
 
     void OnMouseUp()
     {
-        if ((this.transform.position.y > CAMERA_FLOOR) && (Time.timeScale != 0.0f))
-        { // If above the bottom of camera, apply gavity
-            acceleration += new Vector3(0, -GRAVITY, 0);
-        }
+		if ((this.transform.position.y > -2) && (Time.timeScale != 0.0f))
+		{ // If above the bottom of camera, apply gavity
+			acceleration += new Vector3(0, -GRAVITY, 0);
+		}
+
+		if ((this.transform.position.y <= -2) && (Time.timeScale != 0.0f))
+		{
+			grounded = true;
+			anim.SetBool ("Grounded", (grounded));
+		}
 
         Vector2[] points = fingerTrack.ToArray();
         //Vector2 startPoint = points[0];
@@ -88,6 +101,7 @@ public class SwipingScript : MonoBehaviour
 
         velocity += new Vector3(diff.x, diff.y, 0);
 		isClickedOn = false;
+		anim.SetBool ("Grabbed", (isClickedOn));
     }
 
     // Update is called once per frame
