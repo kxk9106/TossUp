@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print(timer);
+		//print(timer);
 		if(timer > 0){
 			timer -= Time.deltaTime;
 		} else {

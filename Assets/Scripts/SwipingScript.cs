@@ -106,7 +106,7 @@ public class SwipingScript : MonoBehaviour
             acceleration = new Vector3(0, -GRAVITY, 0);
         }*/
 
-		if (CharacterDead == true)
+		if (CharacterDead)
 		{
 			if(this.GetComponent<SpriteRenderer>().color.a > 0){
 				Color color = this.GetComponent<SpriteRenderer>().color;
@@ -124,6 +124,11 @@ public class SwipingScript : MonoBehaviour
             {
                 CharacterDead = true;
 
+                if(this.GetComponent<DeathHandler>() != null)
+                {
+                    this.GetComponent<DeathHandler>().flagForDeath();
+                }
+                /*
                 if (this.gameObject.GetComponent<Animator>() != null)
                 {
                     this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
@@ -134,10 +139,11 @@ public class SwipingScript : MonoBehaviour
                 }
                 else
                 {
+                    this.GetComponent<DeathHandler>().flagForDeath();
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("EXPLOSION", typeof(Sprite)) as Sprite; //makeexplosion
                     Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
                     castScript.takeDamage();
-                }
+                }*/
             }
 
             velocity = Vector3.zero;

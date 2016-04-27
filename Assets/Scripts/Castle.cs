@@ -8,7 +8,7 @@ public class Castle : MonoBehaviour {
 	public float speed = 1f;
 	float counter = 0.001f;
 
-	float segment = 2f;
+	//float segment = 2f;
 	// Use this for initialization
 	void Start () {
 
@@ -27,9 +27,9 @@ public class Castle : MonoBehaviour {
 			}
 			if(tower.transform.position.y <= -1.6){
 				Application.LoadLevel("EndScreen");
-				Debug.Log ("woifjeoiewjfwej");
+				//Debug.Log ("Tower Destroyed");
 			}
-			Debug.Log ("Tower: " + tower.transform.position.y);
+			//Debug.Log ("Tower: " + tower.transform.position.y);
 
 		} else {
 			counter = 0;
