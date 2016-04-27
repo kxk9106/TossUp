@@ -17,7 +17,9 @@ public class Shake : MonoBehaviour {
 	public GameObject[]enemies;
 
 	public float upSpeed = 3.0f;
-	public float downSpeed = 2.0f;
+	public float downSpeed = 4.0f;
+
+	public bool up = true;
 
 	void Awake(){
 	}
@@ -66,11 +68,21 @@ public class Shake : MonoBehaviour {
 
 		foreach(GameObject en in enemies){
 			SendUp(en);
+			Debug.Log("In the loop");
 		}
 	}
 
 	void SendUp(GameObject gm){
-		gm.transform.Translate(Vector3.up * upSpeed * Time.deltaTime,Space.World);
+		if (up == true) {
+			gm.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f,3.0f),ForceMode2D.Impulse);
+			gm.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+			if(gm.transform.position.y >= 4.0f){
+				up = false;
+			}
+		}
+		if (up == false) {
+			gm.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f,-40.0f),ForceMode2D.Impulse);
+		}
 		Debug.Log ("Sent: ");
 
 	}
