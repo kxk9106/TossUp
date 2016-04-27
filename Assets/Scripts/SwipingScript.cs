@@ -42,8 +42,12 @@ public class SwipingScript : MonoBehaviour
                 isClickedOn = true;
 				grounded = false;
 
-				anim.SetBool ("Grabbed", (isClickedOn));
-				anim.SetBool ("Grounded", (grounded));
+                if (this.gameObject.GetComponent<Animator>() != null)
+                {
+                    anim.SetBool("Grabbed", (isClickedOn));
+                    anim.SetBool("Grounded", (grounded));
+                }
+				
                 // Stop momentum if player grabs midair
                 acceleration = Vector3.zero;
                 velocity = Vector3.zero;
@@ -101,7 +105,12 @@ public class SwipingScript : MonoBehaviour
 
         velocity += new Vector3(diff.x, diff.y, 0);
 		isClickedOn = false;
-		anim.SetBool ("Grabbed", (isClickedOn));
+
+        if (this.gameObject.GetComponent<Animator>() != null)
+        {
+            anim.SetBool("Grabbed", (isClickedOn));
+        }
+		
     }
 
     // Update is called once per frame

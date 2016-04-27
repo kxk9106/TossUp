@@ -16,7 +16,7 @@ public class DeathHandler : MonoBehaviour {
         {
             if (this.gameObject.GetComponent<Animator>() != null)
             {
-                this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+                //this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
             }
             if (this.tag == "Enemy")
             {
