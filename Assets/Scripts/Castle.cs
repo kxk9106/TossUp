@@ -27,10 +27,7 @@ public class Castle : MonoBehaviour {
 			}
 			if(tower.transform.position.y <= -1.6){
 				Application.LoadLevel("EndScreen");
-				Debug.Log ("woifjeoiewjfwej");
 			}
-			Debug.Log ("Tower: " + tower.transform.position.y);
-
 		} else {
 			counter = 0;
 			//
