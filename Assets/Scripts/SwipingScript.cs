@@ -15,7 +15,6 @@ public class SwipingScript : MonoBehaviour
 	private Animator anim;
 	Sprite blood;
 
-
     public bool isClickedOn = false;
 	public bool grounded = true;
 
