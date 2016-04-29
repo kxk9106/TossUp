@@ -22,6 +22,8 @@ public class Shake : MonoBehaviour {
 	public bool up = true;
 	public bool down = false;
 
+	public bool slide = false;
+
 	void Awake(){
 	}
 
@@ -51,9 +53,10 @@ public class Shake : MonoBehaviour {
 			for(int i = 0; i < enemies.Length; i++){
 
 				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
+				slide = true;
 
-				rb.AddForce(new Vector2(30.0f,0.0f),ForceMode2D.Impulse);
-				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+				//rb.AddForce(new Vector2(30.0f,0.0f),ForceMode2D.Impulse);
+				//rb.constraints = RigidbodyConstraints2D.FreezePositionX;
 				
 			
 			}

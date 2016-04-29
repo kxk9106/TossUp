@@ -5,12 +5,14 @@ public class Player : MonoBehaviour {
 	Castle castScript;
 	SwipingScript swipeScript;
 	DeathHandler deathScript;
+	Shake shakeScript;
 
 	// Use this for initialization
 	void Start () {
 		castScript = FindObjectOfType (typeof(Castle)) as Castle;
 		swipeScript = FindObjectOfType (typeof(SwipingScript)) as SwipingScript;
 		deathScript = FindObjectOfType (typeof(DeathHandler)) as DeathHandler;
+		shakeScript = FindObjectOfType (typeof(Shake)) as Shake;
 		if(this.GetComponent<Rigidbody2D>() == null){
 			this.gameObject.AddComponent<Rigidbody2D>();
 		}
@@ -23,7 +25,15 @@ public class Player : MonoBehaviour {
 		//has this charachter been flagged for death? if not, move
 		if (!this.GetComponent<SwipingScript>().isDead())
 		{
-            this.transform.position -= new Vector3(2, 0, 0) * Time.deltaTime; /*Time.fixedDeltaTime*/
+			if(shakeScript.slide == true){
+				Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+				
+				rb.AddForce(new Vector2(15.0f,0.0f),ForceMode2D.Impulse);
+				shakeScript.slide = false;
+			}
+			else{
+				this.transform.position -= new Vector3(2, 0, 0) * Time.deltaTime; /*Time.fixedDeltaTime*/
+			}
 		}
 
 		//is the character coliding with the castle?
