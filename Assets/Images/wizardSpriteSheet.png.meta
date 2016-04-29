@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: 59c541278194f86418a69b3b06ca1e3a
+timeCreated: 1461910178
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: wizardSpriteSheet_0
+    21300002: wizardSpriteSheet_1
+    21300004: wizardSpriteSheet_2
+    21300006: wizardSpriteSheet_3
+    21300008: wizardSpriteSheet_4
+    21300010: wizardSpriteSheet_5
+    21300012: wizardSpriteSheet_6
+    21300014: wizardSpriteSheet_7
+    21300016: wizardSpriteSheet_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: wizardSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 453
+        width: 147
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: 122}
+        - {x: -73.5, y: 122}
+        - {x: -73.5, y: -122}
+        - {x: 73.5, y: -122}
+        - {x: 73.5, y: 0}
+        - {x: 21.5, y: 75}
+    - name: wizardSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 453
+        width: 157
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 122}
+        - {x: -78.5, y: 122}
+        - {x: -78.5, y: -122}
+        - {x: 72.5, y: -122}
+        - {x: 78.5, y: -118}
+        - {x: 78.5, y: -3}
+        - {x: 25.5, y: 67}
+    - name: wizardSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 453
+        width: 167
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69.5, y: 122}
+        - {x: -83.5, y: 122}
+        - {x: -83.5, y: 104}
+        - {x: -65.5, y: 45}
+        - {x: -79.5, y: -9}
+        - {x: -83.5, y: -56}
+        - {x: -83.5, y: -117}
+        - {x: -77.5, y: -122}
+        - {x: 45.5, y: -122}
+        - {x: 83.5, y: -86}
+        - {x: 83.5, y: -1}
+        - {x: -1.5, y: 99}
+    - name: wizardSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 453
+        width: 175
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 102}
+        - {x: -46.5, y: 122}
+        - {x: -87.5, y: 122}
+        - {x: -87.5, y: -122}
+        - {x: -3.5, y: -122}
+        - {x: 12.5, y: -110}
+        - {x: 87.5, y: -49}
+        - {x: 87.5, y: 29}
+    - name: wizardSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 453
+        width: 175
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 95}
+        - {x: -71.5, y: 122}
+        - {x: -87.5, y: 122}
+        - {x: -87.5, y: -115}
+        - {x: -67.5, y: -122}
+        - {x: -3.5, y: -122}
+        - {x: 12.5, y: -110}
+        - {x: 87.5, y: 10}
+        - {x: 87.5, y: 52}
+    - name: wizardSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 453
+        width: 146
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56, y: 83}
+        - {x: -59, y: 122}
+        - {x: -73, y: 122}
+        - {x: -73, y: 105}
+        - {x: -62, y: 68}
+        - {x: -73, y: 14}
+        - {x: -73, y: -118}
+        - {x: -68, y: -122}
+        - {x: 25, y: -122}
+        - {x: 73, y: -22}
+        - {x: 73, y: 93}
+        - {x: 64, y: 91}
+    - name: wizardSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 122
+        width: 140
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70, y: 122}
+        - {x: -70, y: 105}
+        - {x: -59, y: 68}
+        - {x: -70, y: 14}
+        - {x: -70, y: -118}
+        - {x: -66, y: -122}
+        - {x: 29, y: -122}
+        - {x: 70, y: -8}
+        - {x: 70, y: 122}
+    - name: wizardSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 122
+        width: 101
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 122}
+        - {x: -50.5, y: -122}
+        - {x: 50.5, y: -122}
+        - {x: 50.5, y: 122}
+    - name: wizardSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 123
+        width: 113
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 56.5, y: 115}
+        - {x: 8.5, y: 122}
+        - {x: -56.5, y: 122}
+        - {x: -56.5, y: -122}
+        - {x: 27.5, y: -122}
+        - {x: 43.5, y: -110}
+        - {x: 55.5, y: 34}
+        - {x: 56.5, y: 57}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
