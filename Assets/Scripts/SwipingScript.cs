@@ -10,9 +10,10 @@ public class SwipingScript : MonoBehaviour
     Vector3 acceleration; // Not sure if we need this variable
     Vector3 velocity;
     Queue<Vector2> fingerTrack = new Queue<Vector2>(); //position queue
-    bool CharacterDead = false;
+    public bool CharacterDead = false;
     bool isBomb = false;
 	private Animator anim;
+	Sprite blood;
 
 
     public bool isClickedOn = false;
@@ -21,6 +22,7 @@ public class SwipingScript : MonoBehaviour
     // Use this for initialization
     public void Start()
     {
+		blood = Resources.Load("blood", typeof(Sprite)) as Sprite;
         queSetter();
 		anim = GetComponent<Animator> ();
 
@@ -131,6 +133,7 @@ public class SwipingScript : MonoBehaviour
 
 		if (CharacterDead)
 		{
+			this.GetComponent<SpriteRenderer>().sprite = blood; //make blood puddle
 			if(this.GetComponent<SpriteRenderer>().color.a > 0){
 				Color color = this.GetComponent<SpriteRenderer>().color;
 				color.a -= 0.01f;

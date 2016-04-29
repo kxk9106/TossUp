@@ -20,6 +20,7 @@ public class Shake : MonoBehaviour {
 	public float downSpeed = 4.0f;
 
 	public bool up = true;
+	public bool down = false;
 
 	void Awake(){
 	}
@@ -30,8 +31,7 @@ public class Shake : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		//enemies[0].transform.Translate(Vector3.up * upSpeed * Time.deltaTime,Space.World);
+	void FixedUpdate () {
 
 		earthQuake.fillAmount += 1.0f / charge * Time.deltaTime;
 		if (earthQuake.fillAmount >= 1) {
@@ -41,50 +41,51 @@ public class Shake : MonoBehaviour {
 		}
 		iphoneAcc = Input.acceleration;
 		iphoneDeltaAcc = iphoneAcc-LowPassFilter(iphoneAcc);
-		//Debug.Log ("Iphone: " + iphoneDeltaAcc);
-		
+
 		if(Mathf.Abs(iphoneDeltaAcc.x)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
-			Slam ();
+			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+			Debug.Log ("Enemies: " + enemies.Length);
+			
+			for(int i = 0; i < enemies.Length; i++){
+
+				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
+
+				rb.AddForce(new Vector2(30.0f,0.0f),ForceMode2D.Impulse);
+				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+				
+			
+			}
 		}
 		else if(Mathf.Abs(iphoneDeltaAcc.y)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
-			Slam ();
+			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+			Debug.Log ("Enemies: " + enemies.Length);
+			
+			for(int i = 0; i < enemies.Length; i++){
+				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
+
+				rb.AddForce(new Vector2(0.0f,30.0f),ForceMode2D.Impulse);
+				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+			}
 		}
 		else if(Mathf.Abs(iphoneDeltaAcc.z)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
-			Slam ();
+			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+			Debug.Log ("Enemies: " + enemies.Length);
+			
+			for(int i = 0; i < enemies.Length; i++){
+				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
+			
 
-
-		}  
-	}
-
-	void Slam(){
-		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		Debug.Log ("Enemies: " + enemies.Length);
-
-		foreach(GameObject en in enemies){
-			SendUp(en);
-			Debug.Log("In the loop");
-		}
-	}
-
-	void SendUp(GameObject gm){
-		if (up == true) {
-			gm.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f,3.0f),ForceMode2D.Impulse);
-			gm.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
-			if(gm.transform.position.y >= 4.0f){
-				up = false;
+				rb.AddForce(new Vector2(0.0f,30.0f),ForceMode2D.Impulse);
+				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+			
 			}
-		}
-		if (up == false) {
-			gm.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f,-40.0f),ForceMode2D.Impulse);
-		}
-		Debug.Log ("Sent: ");
-
+		} 
 	}
 
 	Vector3 LowPassFilter(Vector3 newSample) {
