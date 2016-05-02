@@ -80,7 +80,10 @@ public class SwipingScript : MonoBehaviour
 		if ((this.transform.position.y <= -2) && (Time.timeScale != 0.0f))
 		{
 			grounded = true;
-			anim.SetBool ("Grounded", (grounded));
+            if (this.anim != null)
+            {
+                anim.SetBool("Grounded", (grounded));
+            }
 		}
 
         Vector2[] points = fingerTrack.ToArray();
@@ -132,7 +135,7 @@ public class SwipingScript : MonoBehaviour
 
 		if (CharacterDead)
 		{
-			this.GetComponent<SpriteRenderer>().sprite = blood; //make blood puddle
+			//this.GetComponent<SpriteRenderer>().sprite = blood; //make blood puddle
 			if(this.GetComponent<SpriteRenderer>().color.a > 0){
 				Color color = this.GetComponent<SpriteRenderer>().color;
 				color.a -= 0.01f;
