@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DeathHandler : MonoBehaviour {
     bool flaggedForDeath = false;
-    bool exploded = false;
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +22,11 @@ public class DeathHandler : MonoBehaviour {
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }
-            else if((this.tag == "bomb") && !exploded)
+            else if(this.tag == "bomb")
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("EXPLOSION", typeof(Sprite)) as Sprite; //make explosion
-                //if (!exploded)
-                //{
-                    Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
-                    castScript.takeDamage();
-                    exploded = true;
-                //}
+                Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
+                castScript.takeDamage();
             }
 
         }
