@@ -38,22 +38,6 @@ public class Bomber : MonoBehaviour {
 			SpawnEnemy();
 		}
 
-		/*foreach (GameObject bomber in bombers) {
-			if (movingLeft) {
-				bomber.transform.position += Vector3.left * speed * Time.deltaTime;
-				if (bomber.transform.position.x < -2) {
-					movingLeft = false;
-				}
-
-			} 
-			else {
-				bomber.transform.position += Vector3.right * speed * Time.deltaTime;
-				if(bomber.transform.position.x > 6){
-					movingLeft = true;
-				}
-			}
-			Debug.Log ("Transform" + bomber.transform.position.x);
-		}*/
 
 		
 	}
