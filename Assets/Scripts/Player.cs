@@ -50,12 +50,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Sky") {
+		if (coll.gameObject.tag == "Sky"&&swipeScript.isClickedOn==false) {
 			Debug.Log ("Hit sky");
 			Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
 			rb.AddForce(new Vector2(0.0f,-100.0f),ForceMode2D.Impulse);
-			this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
-			this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
 			swipeScript.CharacterDead = true;
 		}
 	}

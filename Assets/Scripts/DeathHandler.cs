@@ -23,6 +23,10 @@ public class DeathHandler : MonoBehaviour {
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }
+            if (this.tag == "Bomber")
+            {
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+            }
             else if((this.tag == "bomb") && !exploded)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("EXPLOSION", typeof(Sprite)) as Sprite; //make explosion
