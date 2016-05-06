@@ -151,7 +151,10 @@ public class SwipingScript : MonoBehaviour
             if (this.velocity.magnitude > 0.2f)
             {
                 CharacterDead = true;
-				anim.SetBool("Flagged", (CharacterDead));
+                if (this.anim != null)
+                {
+                    anim.SetBool("Flagged", (CharacterDead));
+                }
 
                 if(this.GetComponent<DeathHandler>() != null)
                 {
