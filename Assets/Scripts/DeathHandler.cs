@@ -4,10 +4,11 @@ using System.Collections;
 public class DeathHandler : MonoBehaviour {
     bool flaggedForDeath = false;
     bool exploded = false;
-
+	public float value;
+	GameManager gameManagerScript;
 	// Use this for initialization
 	void Start () {
-	
+		gameManagerScript = FindObjectOfType (typeof(GameManager)) as GameManager;
 	}
 	
 	// Update is called once per frame
@@ -48,5 +49,8 @@ public class DeathHandler : MonoBehaviour {
     public void flagForDeath()
     {
         flaggedForDeath = true;
+		gameManagerScript.gamerScore += value;
+		gameManagerScript.scoreText.text= "Score: " + gameManagerScript.gamerScore;
+		//Debug.Log (gameManagerScript.gamerScore);
     }
 }

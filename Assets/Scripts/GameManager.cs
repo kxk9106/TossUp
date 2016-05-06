@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour {
 	private List<int> waveSpawnCount;
 	private int spawnCountLimit = FIRST_WAVE_COUNT; // First wave count
 	private int currentSpawnCount = FIRST_WAVE_COUNT;
+	public float gamerScore;
+
+	public Text scoreText;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +30,8 @@ public class GameManager : MonoBehaviour {
 		waveSpawnCount.Add(FIRST_WAVE_COUNT);
 		resetInterWaveTimer();
 		resetIntraSpawnTimer();
+		gamerScore = 0;
+
 	}
 
 	void resetInterWaveTimer(){
@@ -68,4 +74,6 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
+
+
 }
