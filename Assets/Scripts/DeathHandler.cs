@@ -64,4 +64,14 @@ public class DeathHandler : MonoBehaviour {
 		gameManagerScript.scoreText.text= "Score: " + gameManagerScript.gamerScore;
 		//Debug.Log (gameManagerScript.gamerScore);
     }
+
+    /// <summary>
+    /// Returns life/death state.
+    /// Returns true if the character is still alive.
+    /// </summary>
+    /// <returns>bool alive</returns>
+    public bool isAlive()
+    {
+        return !flaggedForDeath;
+    }
 }

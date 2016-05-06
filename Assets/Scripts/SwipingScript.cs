@@ -38,17 +38,17 @@ public class SwipingScript : MonoBehaviour
             Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
 
             // Will it blend? If so, start allowing the OnMouseDrag to call
-            if (hitCollider)
+            if (hitCollider && this.GetComponent<DeathHandler>().isAlive())
             {
                 isClickedOn = true;
-				grounded = false;
+                grounded = false;
 
                 if (this.gameObject.GetComponent<Animator>() != null)
                 {
                     anim.SetBool("Grabbed", (isClickedOn));
                     anim.SetBool("Grounded", (grounded));
                 }
-				
+
                 // Stop momentum if player grabs midair
                 acceleration = Vector3.zero;
                 velocity = Vector3.zero;
