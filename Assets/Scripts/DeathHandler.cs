@@ -36,17 +36,31 @@ public class DeathHandler : MonoBehaviour {
             else if((this.tag == "bomb") && !exploded)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("EXPLOSION", typeof(Sprite)) as Sprite; //make explosion
-                //if (!exploded)
-                //{
-                    Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
+                
+                Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
+                if (this.GetComponent<BoxCollider2D>().IsTouching(castScript.GetComponent<BoxCollider2D>()))
+                {
                     castScript.takeDamage();
-                    exploded = true;
-                //}
-            }
+                }
+                
 
+                
+                
+
+                exploded = true;
+                //GameObject bomb = (GameObject)Instantiate(explosiveForce, this.transform.position, rot);
+
+            }
         }
-	
 	}
+
+    /*
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(this + " hit " + other);
+    }
+    */
+
 
     /// <summary>
     /// Trigger death state in object
