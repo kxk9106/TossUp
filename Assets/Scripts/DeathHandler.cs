@@ -6,9 +6,13 @@ public class DeathHandler : MonoBehaviour {
     bool exploded = false;
 	public float value;
 	GameManager gameManagerScript;
+	Shake shakeScript;
+
 	// Use this for initialization
 	void Start () {
 		gameManagerScript = FindObjectOfType (typeof(GameManager)) as GameManager;
+		shakeScript = FindObjectOfType (typeof(Shake)) as Shake;
+
 	}
 	
 	// Update is called once per frame
@@ -26,7 +30,8 @@ public class DeathHandler : MonoBehaviour {
             }
             if (this.tag == "Bomber")
             {
-                this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }
             else if((this.tag == "bomb") && !exploded)
             {
@@ -49,6 +54,12 @@ public class DeathHandler : MonoBehaviour {
     public void flagForDeath()
     {
         flaggedForDeath = true;
+		if (this.tag == "Enemy") {
+			shakeScript.maxProgress += .2f;
+		} 
+		else if (this.tag == "Bomber") {
+			shakeScript.maxProgress += .1f;
+		}
 		gameManagerScript.gamerScore += value;
 		gameManagerScript.scoreText.text= "Score: " + gameManagerScript.gamerScore;
 		//Debug.Log (gameManagerScript.gamerScore);

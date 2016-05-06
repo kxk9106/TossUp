@@ -23,6 +23,7 @@ public class Shake : MonoBehaviour {
 	public bool down = false;
 
 	public bool slide = false;
+	public float maxProgress = 0.0f;
 
 	void Awake(){
 	}
@@ -34,8 +35,9 @@ public class Shake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-		earthQuake.fillAmount += 1.0f / charge * Time.deltaTime;
+		if (earthQuake.fillAmount < maxProgress) {
+			earthQuake.fillAmount += .2f * Time.deltaTime;
+		} 
 		if (earthQuake.fillAmount >= 1) {
 			ready.text = "Ready";
 		} else {
@@ -47,9 +49,9 @@ public class Shake : MonoBehaviour {
 		if(Mathf.Abs(iphoneDeltaAcc.x)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
+			maxProgress = 0.0f;
 			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-			Debug.Log ("Enemies: " + enemies.Length);
-			
+
 			for(int i = 0; i < enemies.Length; i++){
 
 				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
@@ -64,29 +66,42 @@ public class Shake : MonoBehaviour {
 		else if(Mathf.Abs(iphoneDeltaAcc.y)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
+			maxProgress = 0.0f;
+
 			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-			Debug.Log ("Enemies: " + enemies.Length);
-			
+
 			for(int i = 0; i < enemies.Length; i++){
 				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
 
-				rb.AddForce(new Vector2(0.0f,30.0f),ForceMode2D.Impulse);
+				rb.AddForce(new Vector2(0.0f,25.0f),ForceMode2D.Impulse);
 				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+				if (enemies[i].gameObject.GetComponent<Animator>() != null)
+				{
+					enemies[i].gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+				}
+				enemies[i].gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+
 			}
 		}
 		else if(Mathf.Abs(iphoneDeltaAcc.z)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
 			earthQuake.fillAmount =.0f;
+			maxProgress = 0.0f;
+
 			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-			Debug.Log ("Enemies: " + enemies.Length);
-			
+
 			for(int i = 0; i < enemies.Length; i++){
 				Rigidbody2D rb = enemies[i].GetComponent<Rigidbody2D>();
 			
 
 				rb.AddForce(new Vector2(0.0f,30.0f),ForceMode2D.Impulse);
 				rb.constraints = RigidbodyConstraints2D.FreezePositionX;
-			
+				if (enemies[i].gameObject.GetComponent<Animator>() != null)
+				{
+					enemies[i].gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
+				}
+				enemies[i].gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
+
 			}
 		} 
 	}
