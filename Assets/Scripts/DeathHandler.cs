@@ -42,13 +42,11 @@ public class DeathHandler : MonoBehaviour {
                 {
                     castScript.takeDamage();
                 }
-                
+                this.GetComponent<explosionHandler>().createExplosion(this.transform);
 
-                
-                
 
                 exploded = true;
-                //GameObject bomb = (GameObject)Instantiate(explosiveForce, this.transform.position, rot);
+                
 
             }
         }
