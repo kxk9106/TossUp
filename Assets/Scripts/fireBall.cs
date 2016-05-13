@@ -4,11 +4,12 @@ using System.Collections;
 public class fireBall : MonoBehaviour {
 
 	GameObject target;
-	float speed = 2.5f  * Time.deltaTime;
+	float speed;
 	Wizard wizardScript;
 
 	// Use this for initialization
 	void Start () {
+        speed = 2.5f  * Time.deltaTime;
 		wizardScript = FindObjectOfType (typeof(Wizard)) as Wizard;
 		target = wizardScript.target;
 	}
