@@ -30,15 +30,19 @@ public class Wizard : MonoBehaviour {
 		float closest = 0f;
 		foreach (GameObject walker in gameManagerScript.walkers) 
 		{
-			float temp = Vector3.Distance (this.transform.position, gameManagerScript.walkers [i].transform.position);
+            if (walker != null)
+            {
+                float temp = Vector3.Distance(this.transform.position, gameManagerScript.walkers[i].transform.position);
 
-			if (temp > closest || closest == null) {
-				closest = temp;
-				target = gameManagerScript.walkers [i];
-			}
+                if (temp > closest)
+                {
+                    closest = temp;
+                    target = gameManagerScript.walkers[i];
+                }
 
-		
-			i++;
+
+                //i++;
+            }
 		}
 		//Debug.Log (target);
 		GameObject ball = (GameObject)Instantiate (fireballPrefab, fireballSpawn.transform.position, rot) as GameObject;
