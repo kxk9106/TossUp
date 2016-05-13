@@ -50,11 +50,15 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Sky"&&swipeScript.isClickedOn==false) {
+		if (coll.gameObject.tag == "Sky"&&swipeScript.isClickedOn==false && shakeScript.shaking == true) {
+			this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 			Debug.Log ("Hit sky");
 			Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
 			rb.AddForce(new Vector2(0.0f,-100.0f),ForceMode2D.Impulse);
 			swipeScript.CharacterDead = true;
+			shakeScript.shaking = false;
+			this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
 		}
 	}
 }
