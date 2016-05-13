@@ -72,9 +72,9 @@ public class DeathHandler : MonoBehaviour {
 		else if (this.tag == "Bomber") {
 			shakeScript.maxProgress += .1f;
 		}
-		gameManagerScript.gamerScore += value;
-		gameManagerScript.scoreText.text= "Score: " + gameManagerScript.gamerScore;
-		//Debug.Log (gameManagerScript.gamerScore);
+		gameManagerScript.totalGameScore += value;
+		gameManagerScript.scoreText.text= "Score: " + gameManagerScript.totalGameScore;
+		//Debug.Log (gameManagerScript.totalGameScore);
     }
 
     /// <summary>
