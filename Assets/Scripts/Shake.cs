@@ -16,6 +16,8 @@ public class Shake : MonoBehaviour {
 	public Text ready;
 	public GameObject[]enemies;
 
+	public bool shaking = false;
+
 	public float upSpeed = 3.0f;
 	public float downSpeed = 4.0f;
 
@@ -43,11 +45,13 @@ public class Shake : MonoBehaviour {
 		} else {
 			ready.text = "";
 		}
+
 		iphoneAcc = Input.acceleration;
 		iphoneDeltaAcc = iphoneAcc-LowPassFilter(iphoneAcc);
 
 		if(Mathf.Abs(iphoneDeltaAcc.x)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
+			shaking = true;
 			earthQuake.fillAmount =.0f;
 			maxProgress = 0.0f;
 			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
@@ -85,6 +89,7 @@ public class Shake : MonoBehaviour {
 		}
 		else if(Mathf.Abs(iphoneDeltaAcc.z)>=2.5f&&earthQuake.fillAmount == 1.0f)
 		{
+			shaking = true;
 			earthQuake.fillAmount =.0f;
 			maxProgress = 0.0f;
 
