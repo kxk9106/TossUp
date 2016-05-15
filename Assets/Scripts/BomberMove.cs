@@ -45,6 +45,12 @@ public class BomberMove : MonoBehaviour {
 			//transform.position = temp;
 			dead = true;
 		}
-		//Debug.Log ("Transform" + transform.position.x);
+
+		// Increased falling speed when above the screen
+		if(this.transform.position.y > 4.2){
+			this.GetComponent<Rigidbody2D>().gravityScale = 3;
+		} else {
+			this.GetComponent<Rigidbody2D>().gravityScale = 0;
+		}
 	}
 }

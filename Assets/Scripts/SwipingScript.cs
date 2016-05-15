@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class SwipingScript : MonoBehaviour
 {
-
     const float CAMERA_FLOOR = -4.2f; // Change this to be ground collision later
     const float GRAVITY = 0.006f; // Keep this low
     Vector3 acceleration; // Not sure if we need this variable
@@ -24,7 +23,6 @@ public class SwipingScript : MonoBehaviour
 		blood = Resources.Load("blood", typeof(Sprite)) as Sprite;
         queSetter();
 		anim = GetComponent<Animator> ();
-
     }
 
     // Keep in mind these OnMouse events trigger before Update()
@@ -64,7 +62,6 @@ public class SwipingScript : MonoBehaviour
             pz.z = 0;
             this.transform.position = pz;
 
-
             fingerTrack.Enqueue(this.transform.position);//add current finger position to queue
             fingerTrack.Dequeue();//remove the oldest position from the queue
         }
@@ -91,19 +88,11 @@ public class SwipingScript : MonoBehaviour
         //Vector2 midPoint = points[1];
         //Vector2 endPoint = points[2];
 
-
         // So basically the faster the player flicks the cube the faster it travels
         // This has its flaws, but it should do for now
         // TB update: this averages the last two drag positions. We should consider using the spring
         // system the professor demonstrated if we have the chance.
         Vector2 diff = ((points[1] - points[0]) + (points[2] - points[1])) / 2;
-
-
-
-
-
-
-
 
         diff.Scale(new Vector2(0.5f, 0.5f));
 
@@ -114,7 +103,6 @@ public class SwipingScript : MonoBehaviour
         {
             anim.SetBool("Grabbed", (isClickedOn));
         }
-		
     }
 
     // Update is called once per frame

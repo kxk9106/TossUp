@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class WalkerMover : MonoBehaviour {
 	Castle castScript;
 	SwipingScript swipeScript;
 	DeathHandler deathScript;
@@ -21,7 +21,6 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		//has this charachter been flagged for death? if not, move
 		if (!this.GetComponent<SwipingScript>().isDead())
 		{
@@ -47,12 +46,18 @@ public class Player : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
+
+		// Increased falling speed when above the screen
+		if(this.transform.position.y > 4.2){
+			this.GetComponent<Rigidbody2D>().gravityScale = 3;
+		} else {
+			this.GetComponent<Rigidbody2D>().gravityScale = 1;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Sky"&&swipeScript.isClickedOn==false && shakeScript.shaking == true) {
 			this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
-			Debug.Log ("Hit sky");
 			Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
 			rb.AddForce(new Vector2(0.0f,-100.0f),ForceMode2D.Impulse);
 			swipeScript.CharacterDead = true;

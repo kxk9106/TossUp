@@ -12,7 +12,6 @@ public class DeathHandler : MonoBehaviour {
 	void Start () {
 		gameManagerScript = FindObjectOfType (typeof(GameManager)) as GameManager;
 		shakeScript = FindObjectOfType (typeof(Shake)) as Shake;
-
 	}
 	
 	// Update is called once per frame
@@ -24,7 +23,7 @@ public class DeathHandler : MonoBehaviour {
             {
                 this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
             }
-            if (this.tag == "Enemy")
+            if (this.tag == "Walker")
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }
@@ -43,11 +42,7 @@ public class DeathHandler : MonoBehaviour {
                     castScript.takeDamage();
                 }
                 this.GetComponent<explosionHandler>().createExplosion(this.transform);
-
-
                 exploded = true;
-                
-
             }
         }
 	}
