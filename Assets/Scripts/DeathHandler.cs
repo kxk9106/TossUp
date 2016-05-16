@@ -23,7 +23,7 @@ public class DeathHandler : MonoBehaviour {
             {
                 this.gameObject.GetComponent<Animator>().Stop(); //halt the walking animation
             }
-            if (this.tag == "Walker")
+            if (this.tag == "Walker" || this.tag == "Enemy")
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("blood", typeof(Sprite)) as Sprite; //make blood puddle
             }

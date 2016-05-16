@@ -136,7 +136,7 @@ public class SwipingScript : MonoBehaviour
         if (this.transform.position.y < -2/*CAMERA_FLOOR*/)
         {
             //fatal fall speed
-            if (this.velocity.magnitude > 0.2f)
+            if (this.velocity.magnitude > 0.1f)
             {
                 CharacterDead = true;
                 if (this.anim != null)
