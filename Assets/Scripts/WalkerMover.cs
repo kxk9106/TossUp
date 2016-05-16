@@ -16,7 +16,6 @@ public class WalkerMover : MonoBehaviour {
 		if(this.GetComponent<Rigidbody2D>() == null){
 			this.gameObject.AddComponent<Rigidbody2D>();
 		}
-
 	}
 
 	// Update is called once per frame
@@ -39,7 +38,7 @@ public class WalkerMover : MonoBehaviour {
 		if (this.transform.position.x <= -4 && !swipeScript.isClickedOn && this.transform.position.x >= -8 && this.transform.position.y <= 4)
 		{
 			Destroy(this.gameObject);
-			castScript.takeDamage(5f);
+			castScript.takeDamage(10f);
 		}
 		//was the character flung clear over the castle.
 		else if (this.transform.position.x <= -8 && this.transform.position.y <= 4)

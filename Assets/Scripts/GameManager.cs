@@ -61,6 +61,11 @@ public class GameManager : MonoBehaviour {
 			} else {
 				waitForWave = false;
 				resetInterWaveTimer();
+
+
+				// --- Insert Transition to Shop Code Here ---
+
+
 			}
 		} else { // Spawning
 

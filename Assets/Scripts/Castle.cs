@@ -7,8 +7,8 @@ public class Castle : MonoBehaviour {
 	public Transform target;
 	public float speed = 1f;
 
-	float maxHealth = 100;
-	float currentHealth;
+	public float maxHealth = 100;
+	public float currentHealth;
 	private float counter = 0.001f;
 
 	void Start (){
@@ -22,13 +22,16 @@ public class Castle : MonoBehaviour {
 		if (counter > 0 || currentHealth > 0) {
 			if(tower.transform.position.y > -1.6){
 				float offset = currentHealth / maxHealth * 0.27f;
-				tower.transform.position -= new Vector3 (0, (tower.transform.position.y - offset) * 3.2f, 0) * Time.deltaTime;
+				tower.transform.position -= new Vector3 (0, (tower.transform.position.y - offset) * 50f, 0) * Time.deltaTime;
 				counter -= 1 * Time.deltaTime;
 			}
 			if(tower.transform.position.y <= -1.6){
 				Application.LoadLevel("EndScreen");
 			}
 		} else {
+			if(currentHealth < 0){
+				Application.LoadLevel("EndScreen");
+			}
 			counter = 0;
 		}
 	}
@@ -36,7 +39,8 @@ public class Castle : MonoBehaviour {
 	public void takeDamage(float damage){
 		//while (counter != 0) {	
 		currentHealth -= damage;
-		counter += 1.85f;
+		Debug.Log (currentHealth);
+		counter += 1f;
 		//}
 		//segment += .001f * Time.deltaTime;
 		//}
