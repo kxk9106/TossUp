@@ -39,7 +39,7 @@ public class DeathHandler : MonoBehaviour {
                 Castle castScript = FindObjectOfType(typeof(Castle)) as Castle;
                 if (this.GetComponent<BoxCollider2D>().IsTouching(castScript.GetComponent<BoxCollider2D>()))
                 {
-                    castScript.takeDamage();
+                    castScript.takeDamage(10f);
                 }
                 this.GetComponent<explosionHandler>().createExplosion(this.transform);
                 exploded = true;
