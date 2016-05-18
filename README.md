@@ -12,6 +12,8 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * UI Designer/Level Navigation (switching screens, time pause) -> Background Designed by Todd Williams
 * Parts of Health System/Player damage to castle
 * Bomber Movement
+* Powerup bar loading
+* Shake for Earthquake and pushback
 
 #### Start Screen
 [Start]
