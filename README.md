@@ -36,6 +36,9 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * Script for player taking damage and triggering the castle to fall down
 * Part of the enemy spawning script
 * Basic enemy movement coding
+* Wizard tower defense asset creation and code to destroy enemies
+* State machine for others to use in code
+* New assets for state machine and new states.
 
 
 [Start]: ScreenPics/Start.png "Start Screen"
