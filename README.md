@@ -29,6 +29,8 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * character throwing script (co written with Tom)
 * Cleaned Tom's Death System
 * Cleaned Enemy Spawning
+* Integrated a scaling health system for the castle
+* Repair button functionality, Increased max castle health functionality
 
 ## Todd Williams
 * Production of the main world, enemy, castle, and other assets displayed on screen
