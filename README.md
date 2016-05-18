@@ -44,4 +44,4 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 [Start]: ScreenPics/Start.png "Start Screen"
 [Play]: ScreenPics/Play.png "Playing Screen"
 [End]: ScreenPics/Lose.png "End Screen"
-[video]: https://youtu.be/j7QpPjtG6Dc "Gameplay Video"
+[video]: https://youtu.be/LaJJnNCje5A "Gameplay Video"
