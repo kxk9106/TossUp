@@ -12,6 +12,8 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * UI Designer/Level Navigation (switching screens, time pause) -> Background Designed by Todd Williams
 * Parts of Health System/Player damage to castle
 * Bomber Movement
+* Powerup bar loading
+* Shake for Earthquake and pushback
 
 #### Start Screen
 [Start]
@@ -27,6 +29,8 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * character throwing script (co written with Tom)
 * Cleaned Tom's Death System
 * Cleaned Enemy Spawning
+* Integrated a scaling health system for the castle
+* Repair button functionality, Increased max castle health functionality
 
 ## Todd Williams
 * Production of the main world, enemy, castle, and other assets displayed on screen
@@ -34,9 +38,12 @@ Toss Up is a tower defense game where the player must flick enemies away from at
 * Script for player taking damage and triggering the castle to fall down
 * Part of the enemy spawning script
 * Basic enemy movement coding
+* Wizard tower defense asset creation and code to destroy enemies
+* State machine for others to use in code
+* New assets for state machine and new states.
 
 
 [Start]: ScreenPics/Start.png "Start Screen"
 [Play]: ScreenPics/Play.png "Playing Screen"
 [End]: ScreenPics/Lose.png "End Screen"
-[video]: https://youtu.be/j7QpPjtG6Dc "Gameplay Video"
+[video]: https://youtu.be/LaJJnNCje5A "Gameplay Video"
