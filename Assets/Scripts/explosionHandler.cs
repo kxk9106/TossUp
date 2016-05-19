@@ -24,5 +24,6 @@ public class explosionHandler : MonoBehaviour {
     public void createExplosion(Transform blastOrigin)
     {
         GameObject explosion = (GameObject)Instantiate(explosiveForcePrefab, blastOrigin.position, rot);
+        //explosion.tag = "explosion";
     }
 }

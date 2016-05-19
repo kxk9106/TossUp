@@ -64,5 +64,15 @@ public class WalkerMover : MonoBehaviour {
 			this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
 		}
+        if (coll.gameObject.tag == "Explosion")
+        {
+            //Debug.Log("BOOM");
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+            rb.AddForce(new Vector2(3.0f, -3.0f), ForceMode2D.Impulse);
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+        }
+        //Debug.Log(coll.gameObject.tag);
 	}
 }
