@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 
 	void resetInterWaveTimer(){
 		interWaveTimer = 10.0f; // sort of a constant
-		print ("Wave " + waveSpawnCount.Count + " Starting!");
+		//print ("Wave " + waveSpawnCount.Count + " Starting!");
 	}
 	
 	void resetIntraWalkerSpawnTimer(){

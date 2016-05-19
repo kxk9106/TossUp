@@ -18,7 +18,7 @@ public class ShopScript : MonoBehaviour {
 
 	// Button for repairing castle to max health
 	public void repair(){
-		Debug.Log ("Called Repair");
+		//Debug.Log ("Called Repair");
 
 		float difference = castScript.maxHealth - castScript.currentHealth;
 		if(difference > 0){ // player needs to have taken damage
@@ -39,7 +39,7 @@ public class ShopScript : MonoBehaviour {
 			castScript.maxHealth += 50;
 			castScript.currentHealth += 50;
 		}
-		Debug.Log ("Called expandCastle Health");
+		//Debug.Log ("Called expandCastle Health");
 	}
 
 	//Buying Wizards for later time :(

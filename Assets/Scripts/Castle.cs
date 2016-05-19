@@ -39,7 +39,7 @@ public class Castle : MonoBehaviour {
 	public void takeDamage(float damage){
 		//while (counter != 0) {	
 		currentHealth -= damage;
-		Debug.Log (currentHealth);
+		//Debug.Log (currentHealth);
 		counter += 1f;
 		//}
 		//segment += .001f * Time.deltaTime;
